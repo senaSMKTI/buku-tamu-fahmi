@@ -1,9 +1,7 @@
 <?php
 include '../../inc/conn.php';
 
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+
 
 if ($_SESSION['level'] != 'admin') {
     echo "<script>
@@ -19,7 +17,7 @@ if ($_SESSION['level'] != 'admin') {
 <div class="relative overflow-x-auto">
     <table class="border rounded-md w-full" border="1">
         <thead>
-            <tr class="font-bold uppercase text-xs">
+            <tr class="font-bold uppercase text-xs bg-gray-200">
                 <td class="p-3">No</td>
                 <td class="p-3">Username</td>
                 <td class="p-3">Password</td>

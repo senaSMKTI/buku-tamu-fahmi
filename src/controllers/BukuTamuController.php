@@ -1,8 +1,6 @@
 <?php
 include '../../inc/conn.php';
 
-session_start();
-
 $action = $_GET['action'];
 
 $id_tamu = isset($_GET['id_tamu']) ? $_GET['id_tamu'] : '';

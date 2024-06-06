@@ -8,7 +8,7 @@ include '../../inc/conn.php';
 <div class="relative overflow-x-auto">
     <table class="border rounded-md w-full" border="1">
         <thead>
-            <tr class="font-bold uppercase text-xs">
+            <tr class="font-bold uppercase text-xs bg-gray-200">
                 <td class="p-3">No</td>
                 <td class="p-3">Nama</td>
                 <td class="p-3">Email</td>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 include '../../inc/conn.php';
 
 $username = $_POST['username'];
@@ -8,7 +8,6 @@ $query = "SELECT * FROM admin WHERE username='$username' AND password='$password
 $result = mysqli_query($conn, $query);
 
 if (mysqli_num_rows($result) > 0) {
-    session_start();
     $data = mysqli_fetch_array($result);
 
     $_SESSION['id_admin'] = $data['id_admin'];

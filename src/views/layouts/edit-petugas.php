@@ -1,4 +1,4 @@
-<?php 
+<?php
 include '../../inc/conn.php';
 
 $id_admin = $_GET['id_admin'];
@@ -9,7 +9,7 @@ $data = mysqli_fetch_array($result);
 ?>
 <br />
 <br />
-<a class="py-1.5 px-2 rounded-md bg-white" href="?url=petugas">
+<a class="py-2 px-3 rounded-md bg-white" href="?url=petugas">
     < Kembali</a>
         <div class="flex items-center flex-col">
 

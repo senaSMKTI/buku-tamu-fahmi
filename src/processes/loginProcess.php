@@ -18,5 +18,4 @@ if (mysqli_num_rows($result) > 0) {
     exit;
 } else {
     echo "<script>alert('Username atau password Anda salah!'); history.back();</script>";
-    exit;
 }

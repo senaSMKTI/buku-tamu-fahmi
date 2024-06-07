@@ -1,1 +1,8 @@
-// File ini hanya untuk mendapatkan intellisense dari tailwind
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+	content: ['./src/**/*.{html,js,php}', './index.php'],
+	theme: {
+		extend: {},
+	},
+	plugins: [],
+};

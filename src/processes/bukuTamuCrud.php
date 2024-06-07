@@ -42,21 +42,19 @@ function add()
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-        echo "<script>alert('Data berhasil ditambahkan!');";
         if (isset($_SESSION['id_admin'])) {
-            echo "window.location.assign('../views/admin.php?url=buku-tamu');</script>";
+            header('Location: ../views/admin.php?url=buku-tamu');
             exit;
         } else {
-            echo "window.location.assign('../../');</script>";
+            header('Location: ../../');
             exit;
         }
     } else {
-        echo "<script>alert('Data gagal ditambahkan!');";
         if (isset($_SESSION['id_admin'])) {
-            echo "window.location.assign('../views/admin.php?url=buku-tamu');</script>";
+            header('Location: ../views/admin.php?url=buku-tamu');
             exit;
         } else {
-            echo "window.location.assign('../../');</script>";
+            header('Location: ../../');
             exit;
         }
     }
@@ -77,12 +75,10 @@ function edit()
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-        echo "<script>alert('Data berhasil diubah!'); 
-        window.location.assign('../views/admin.php?url=buku-tamu');</script>";
+        header('Location: ../views/admin.php?url=buku-tamu');
         exit;
     } else {
-        echo "<script>alert('Data gagal diubah!'); 
-        window.location.assign('../views/admin.php?url=edit-buku-tamu&id_tamu=$id_tamu');</script>";
+        header("Location: ../views/admin.php?url=edit-buku-tamu&id_tamu=$id_tamu");
         exit;
     }
 }
@@ -97,12 +93,10 @@ function delete()
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-        echo "<script>alert('Data berhasil dihapus!'); 
-        window.location.assign('../views/admin.php?url=buku-tamu');</script>";
+        header('Location: ../views/admin.php?url=buku-tamu');
         exit;
     } else {
-        echo "<script>alert('Data gagal dihapus!'); 
-        window.location.assign('../views/admin.php?url=buku-tamu');</script>";
+        header('Location: ../views/admin.php?url=buku-tamu');
         exit;
     }
 }

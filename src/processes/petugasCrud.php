@@ -39,12 +39,10 @@ function add()
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-        echo "<script>alert('Data berhasil ditambahkan!'); 
-        window.location.assign('../views/admin.php?url=petugas');</script>";
+        header('Location: ../views/admin.php?url=petugas');
         exit;
     } else {
-        echo "<script>alert('Data gagal ditambahkan!'); 
-        window.location.assign('../views/admin.php?url=tambah-petugas');</script>";
+        header('Location: ../views/admin.php?url=tambah-petugas');
         exit;
     }
 }
@@ -62,12 +60,10 @@ function edit()
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-        echo "<script>alert('Data berhasil diubah!'); 
-        window.location.assign('../views/admin.php?url=petugas');</script>";
+        header('Location: ../views/admin.php?url=petugas');
         exit;
     } else {
-        echo "<script>alert('Data gagal diubah!'); 
-        window.location.assign('../views/admin.php?url=edit-petugas&id_admin=$id_admin');</script>";
+        header("Location: ../views/admin.php?url=edit-petugas&id_admin=$id_admin");
         exit;
     }
 }
@@ -82,12 +78,10 @@ function delete()
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-        echo "<script>alert('Data berhasil dihapus!'); 
-        window.location.assign('../views/admin.php?url=petugas');</script>";
+        header('Location: ../views/admin.php?url=petugas');
         exit;
     } else {
-        echo "<script>alert('Data gagal dihapus!'); 
-        window.location.assign('../views/admin.php?url=petugas');</script>";
+        header('Location: ../views/admin.php?url=petugas');
         exit;
     }
 }

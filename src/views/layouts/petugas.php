@@ -39,7 +39,7 @@ if ($_SESSION['level'] != 'admin') {
                     <td class="p-2"><?= htmlspecialchars($data['level']) ?></td>
                     <td class="p-2">
                         <a class="text-sm inline-block my-0.5 bg-yellow-400 hover:bg-yellow-500 hover:text-white duration-300 rounded-md py-1.5 px-2" href="?url=edit-petugas&id_admin=<?= $data['id_admin'] ?>">Edit</a>
-                        <a class="text-sm inline-block my-0.5 bg-red-400 hover:bg-red-500 hover:text-white duration-300 rounded-md py-1.5 px-2" href="../controllers/PetugasController.php?action=delete&id_admin=<?= $data['id_admin'] ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">Hapus</a>
+                        <a class="text-sm inline-block my-0.5 bg-red-400 hover:bg-red-500 hover:text-white duration-300 rounded-md py-1.5 px-2" href="../processes/petugasCrud.php?action=delete&id_admin=<?= $data['id_admin'] ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">Hapus</a>
                     </td>
                 </tr>
             <?php endforeach ?>

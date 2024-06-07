@@ -21,7 +21,7 @@ if (isset($_SESSION['id_admin'])) {
                 <a href="./index.php" class="py-2 px-3 rounded-md bg-white">
                     < Kembali</a>
                         <h3 class="font-bold text-2xl mb-4 mt-6">Tambah Buku Tamu Sekolah</h3>
-                        <form class="text-center" action="./src/controllers/BukuTamuController.php?action=add" method="post">
+                        <form class="text-center" action="./src/processes/bukuTamuCrud.php?action=add" method="post">
                             <table class="flex justify-center text-start">
                                 <tr>
                                     <td><label for="nama">Nama:</label></td>
@@ -50,7 +50,7 @@ if (isset($_SESSION['id_admin'])) {
                         </form>
             </div>
         <?php else : ?>
-            <form class="bg-white p-12 border border-gray-200 rounded-lg w-min text-center" action="./src/controllers/LoginController.php" method="post">
+            <form class="bg-white p-12 border border-gray-200 rounded-lg w-min text-center" action="./src/processes/loginProcess.php" method="post">
                 <h1 class="font-bold text-3xl mb-6 sm:mb-8 sm:whitespace-nowrap">Aplikasi Buku Tamu Sekolah</h1>
                 <label class="text-lg" for="username">Username: </label>
                 <input class="border px-2 py-1 rounded-md mb-4" type="text" name="username" id="username" required> <br />

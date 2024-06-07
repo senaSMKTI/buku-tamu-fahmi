@@ -34,7 +34,7 @@ if (empty($_SESSION['id_admin'])) {
             <a class="m-[1px] bg-blue-500 hover:bg-blue-600 duration-300 text-white px-3 py-2 rounded-md" href="?url=petugas">Petugas</a>
         <?php endif ?>
 
-        <a class="max-sm:inline-block max-sm:mt-3 md:absolute md:top-0 md:right-0 md:m-20 bg-red-500 hover:bg-red-600 duration-300 text-white px-3 py-2 rounded-md" href="../controllers/LogoutController.php">Logout</a>
+        <a class="max-sm:inline-block max-sm:mt-3 md:absolute md:top-0 md:right-0 md:m-20 bg-red-500 hover:bg-red-600 duration-300 text-white px-3 py-2 rounded-md" href="../processes/logoutProcess.php">Logout</a>
 
         <hr class="mt-6">
         <?php if (empty($_GET['url'])) : ?>

@@ -14,7 +14,7 @@ $data = mysqli_fetch_array($result);
         <div class="flex items-center flex-col">
 
             <h3 class="font-bold text-2xl mb-4">Tambah Buku Tamu Sekolah</h3>
-            <form class="text-center" action="../controllers/BukuTamuController.php?action=edit&id_tamu=<?= $id_tamu ?>" method="post">
+            <form class="text-center" action="../processes/bukuTamuCrud.php?action=edit&id_tamu=<?= $id_tamu ?>" method="post">
                 <table class="flex justify-center text-start">
                     <tr>
                         <td><label for="nama">Nama:</label></td>
@@ -37,6 +37,6 @@ $data = mysqli_fetch_array($result);
                         <td><input value="<?= $data['keperluan'] ?>" class="m-1 ml-3 p-1 px-2 border rounded-md" type="text" name="keperluan" id="keperluan" required></td>
                     </tr>
                 </table>
-                <button type="submit" class="mt-6 py-1.5 px-3 rounded-md text-white bg-sky-500 hover:bg-sky-600 duration-300">Tambah</button>
+                <button type="submit" class="mt-6 py-1.5 px-3 rounded-md text-white bg-sky-500 hover:bg-sky-600 duration-300">Simpan</button>
             </form>
         </div>

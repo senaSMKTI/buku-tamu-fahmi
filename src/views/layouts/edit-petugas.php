@@ -14,7 +14,7 @@ $data = mysqli_fetch_array($result);
         <div class="flex items-center flex-col">
 
             <h3 class="font-bold text-2xl mb-4">Tambah Petugas</h3>
-            <form class="text-center" action="../controllers/PetugasController.php?action=edit&id_admin=<?= $id_admin ?>" method="post">
+            <form class="text-center" action="../processes/petugasCrud.php?action=edit&id_admin=<?= $id_admin ?>" method="post">
                 <table class="flex justify-center text-start">
                     <tr>
                         <td><label for="username">Username:</label></td>
@@ -35,6 +35,6 @@ $data = mysqli_fetch_array($result);
                         </td>
                     </tr>
                 </table>
-                <button type="submit" class="mt-6 py-1.5 px-3 rounded-md text-white bg-sky-500 hover:bg-sky-600 duration-300">Tambah</button>
+                <button type="submit" class="mt-6 py-1.5 px-3 rounded-md text-white bg-sky-500 hover:bg-sky-600 duration-300">Simpan</button>
             </form>
         </div>

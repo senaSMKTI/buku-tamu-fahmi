@@ -5,7 +5,7 @@
     <div class="flex items-center flex-col">
 
         <h3 class="font-bold text-2xl mb-4">Tambah Buku Tamu Sekolah</h3>
-        <form class="text-center" action="../controllers/BukuTamuController.php?action=add" method="post">
+        <form class="text-center" action="../processes/bukuTamuCrud.php?action=add" method="post">
                     <table class="flex justify-center text-start">
                         <tr>
                             <td><label for="nama">Nama:</label></td>

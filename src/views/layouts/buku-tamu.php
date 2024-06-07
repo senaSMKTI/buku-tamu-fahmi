@@ -34,7 +34,7 @@ include '../../inc/conn.php';
                     <td class="p-2"><?= htmlspecialchars($data['keperluan']) ?></td>
                     <td class="p-2">
                         <a class="text-sm inline-block my-0.5 bg-yellow-400 hover:bg-yellow-500 hover:text-white duration-300 rounded-md py-1.5 px-2" href="?url=edit-buku-tamu&id_tamu=<?= $data['id_tamu'] ?>">Edit</a>
-                        <a class="text-sm inline-block my-0.5 bg-red-400 hover:bg-red-500 hover:text-white duration-300 rounded-md py-1.5 px-2" href="../controllers/BukuTamuController.php?action=delete&id_tamu=<?= $data['id_tamu'] ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">Hapus</a>
+                        <a class="text-sm inline-block my-0.5 bg-red-400 hover:bg-red-500 hover:text-white duration-300 rounded-md py-1.5 px-2" href="../processes/bukuTamuCrud.php?action=delete&id_tamu=<?= $data['id_tamu'] ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">Hapus</a>
                     </td>
                 </tr>
             <?php endforeach ?>

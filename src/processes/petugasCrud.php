@@ -28,60 +28,41 @@ switch ($action) {
 
 function add()
 {
-    global $conn;
-
-    global $username;
-    global $password;
-    global $level;
-
+    global $conn, $username, $password, $level;
 
     $query = "INSERT INTO admin(username, password, level) VALUES ('$username', '$password', '$level')";
     $result = mysqli_query($conn, $query);
 
-    if ($result) {
-        header('Location: ../views/admin.php?url=petugas');
-        exit;
-    } else {
-        header('Location: ../views/admin.php?url=tambah-petugas');
-        exit;
-    }
+    $_SESSION['add_petugas_status'] = $result ? true : false;
+
+    $redirectUrl = $result ? '../views/admin.php?url=petugas' : '../views/admin.php?url=tambah-petugas';
+    header("Location: $redirectUrl");
+    exit;
 }
 
 function edit()
 {
-    global $conn;
-
-    global $id_admin;
-    global $username;
-    global $password;
-    global $level;
+    global $conn, $id_admin, $username, $password, $level;
 
     $query = "UPDATE admin SET username='$username', password='$password', level='$level' WHERE id_admin='$id_admin'";
     $result = mysqli_query($conn, $query);
 
-    if ($result) {
-        header('Location: ../views/admin.php?url=petugas');
-        exit;
-    } else {
-        header("Location: ../views/admin.php?url=edit-petugas&id_admin=$id_admin");
-        exit;
-    }
+    $_SESSION['edit_petugas_status'] = $result ? true : false;
+
+    $redirectUrl = $result ? '../views/admin.php?url=petugas' : "../views/admin.php?url=edit-petugas&id_admin=$id_admin";
+    header("Location: $redirectUrl");
+    exit;
 }
 
 function delete()
 {
-    global $conn;
-
-    global $id_admin;
+    global $conn, $id_admin;
 
     $query = "DELETE FROM admin WHERE id_admin='$id_admin'";
     $result = mysqli_query($conn, $query);
 
-    if ($result) {
-        header('Location: ../views/admin.php?url=petugas');
-        exit;
-    } else {
-        header('Location: ../views/admin.php?url=petugas');
-        exit;
-    }
+    $_SESSION['delete_petugas_status'] = $result ? true : false;
+
+    header("Location: ../views/admin.php?url=petugas");
+    exit;
 }

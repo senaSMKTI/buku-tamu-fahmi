@@ -30,73 +30,40 @@ switch ($action) {
 
 function add()
 {
-    global $conn;
-
-    global $nama;
-    global $email;
-    global $asal;
-    global $pekerjaan;
-    global $keperluan;
+    global $conn, $nama, $email, $asal, $pekerjaan, $keperluan;
 
     $query = "INSERT INTO tamu(nama, email, asal, pekerjaan, keperluan) VALUES ('$nama', '$email', '$asal', '$pekerjaan', '$keperluan')";
     $result = mysqli_query($conn, $query);
 
-    if ($result) {
-        if (isset($_SESSION['id_admin'])) {
-            header('Location: ../views/admin.php?url=buku-tamu');
-            exit;
-        } else {
-            header('Location: ../../');
-            exit;
-        }
-    } else {
-        if (isset($_SESSION['id_admin'])) {
-            header('Location: ../views/admin.php?url=buku-tamu');
-            exit;
-        } else {
-            header('Location: ../../');
-            exit;
-        }
-    }
+    $_SESSION['add_buku_tamu_status'] = $result ? true : false;
+
+    $redirectUrl = isset($_SESSION['id_admin']) ? '../views/admin.php?url=buku-tamu' : '../../';
+    header("Location: $redirectUrl");
+    exit;
 }
 
 function edit()
 {
-    global $conn;
-
-    global $id_tamu;
-    global $nama;
-    global $email;
-    global $asal;
-    global $pekerjaan;
-    global $keperluan;
+    global $conn, $id_tamu, $nama, $email, $asal, $pekerjaan, $keperluan;
 
     $query = "UPDATE tamu SET nama='$nama', email='$email', asal='$asal', pekerjaan='$pekerjaan', keperluan='$keperluan' WHERE id_tamu='$id_tamu'";
     $result = mysqli_query($conn, $query);
 
-    if ($result) {
-        header('Location: ../views/admin.php?url=buku-tamu');
-        exit;
-    } else {
-        header("Location: ../views/admin.php?url=edit-buku-tamu&id_tamu=$id_tamu");
-        exit;
-    }
+    $_SESSION['edit_buku_tamu_status'] = $result ? true : false;
+
+    $redirectUrl = $result ? '../views/admin.php?url=buku-tamu' : "../views/admin.php?url=edit-buku-tamu&id_tamu=$id_tamu";
+    header("Location: $redirectUrl");
+    exit;
 }
 
 function delete()
 {
-    global $conn;
-
-    global $id_tamu;
+    global $conn, $id_tamu;
 
     $query = "DELETE FROM tamu WHERE id_tamu='$id_tamu'";
     $result = mysqli_query($conn, $query);
 
-    if ($result) {
-        header('Location: ../views/admin.php?url=buku-tamu');
-        exit;
-    } else {
-        header('Location: ../views/admin.php?url=buku-tamu');
-        exit;
-    }
+    $_SESSION['delete_buku_tamu_status'] = $result ? true : false;
+    header('Location: ../views/admin.php?url=buku-tamu');
+    exit;
 }

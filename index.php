@@ -57,11 +57,42 @@ if (isset($_SESSION['id_admin'])) {
                 <input class="border px-2 py-1 rounded-md mb-4" type="text" name="username" id="username" required> <br />
                 <label class="text-lg" for="password">Password: </label>
                 <input class="border px-2 py-1 rounded-md mb-4" type="password" name="password" id="password" required> <br />
-                <button class="bg-sky-500 hover:bg-sky-600 px-4 py-1 mb-4 rounded-md duration-300 text-white" type="submit">Login</button> <br />
+                <?php
+                if (isset($_SESSION['login_status'])) {
+                    if (!$_SESSION['login_status']) {
+                        echo '<div>
+                                <span class="text-xs text-red-500">Username atau Password Anda Salah!</span>
+                             </div>';
+                        session_unset();
+                    };
+                };
+                ?>
+                <button class="bg-sky-500 hover:bg-sky-600 px-4 py-1 mt-2 mb-4 rounded-md duration-300 text-white" type="submit">Login</button> <br />
                 <a href="index.php?url=tambah-buku-tamu" class="text-sm text-blue-600 hover:text-blue-800 duration-300">Masuk sebagai tamu</a>
             </form>
+            <?php
+            if (isset($_SESSION['add_buku_tamu_status'])) {
+                if ($_SESSION['add_buku_tamu_status']) {
+                    echo '<div id="notifSuccess" class="select-none cursor-pointer absolute top-0 p-4 bg-green-200 border border-green-500 rounded-md mt-16">
+                    Berhasil menambah buku tamu!
+                </div>';
+                } else {
+                    echo '<div id="notifFailed" class="select-none cursor-pointer absolute top-0 p-4 bg-red-200 border border-red-500 rounded-md mt-16">
+                    Gagal menambah buku tamu!
+                </div>';
+                }
+                session_unset();
+            }
+            ?>
         <?php endif ?>
     </div>
+    <script>
+        document.addEventListener('click', function(event) {
+            if (event.target.id === 'notifSuccess' || event.target.id === 'notifFailed') {
+                event.target.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 
 </html>

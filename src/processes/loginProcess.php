@@ -13,9 +13,11 @@ if (mysqli_num_rows($result) > 0) {
     $_SESSION['id_admin'] = $data['id_admin'];
     $_SESSION['username'] = $data['username'];
     $_SESSION['level'] = $data['level'];
+    $_SESSION['login_status'] = true;
 
     header('Location: ../views/admin.php');
     exit;
 } else {
-    echo "<script>alert('Username atau password Anda salah!'); history.back();</script>";
+    $_SESSION['login_status'] = false;
+    echo "<script>history.back();</script>";
 }

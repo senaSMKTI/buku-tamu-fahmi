@@ -47,7 +47,9 @@ if (empty($_SESSION['id_admin'])) {
             <h1 class="mt-4 mb-2 font-bold text-xl">Selamat Datang di Aplikasi Buku Tamu Sekolah</h1>
             <p>Aplikasi ini berguna untuk mencatat tamu yang datang beserta keperluannya.</p>
             <br />
-            <p>Jumlah petugas saat ini: <?= mysqli_num_rows($resultAdmin) ?> </p>
+            <?php if ($_SESSION['level'] == 'admin') : ?>
+                <p>Jumlah petugas saat ini: <?= mysqli_num_rows($resultAdmin) ?> </p>
+            <?php endif ?>
             <p>Jumlah buku tamu saat ini: <?= mysqli_num_rows($resultBukuTamu) ?> </p>
         <?php else :
             $url = $_GET['url'];

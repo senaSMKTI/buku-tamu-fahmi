@@ -15,6 +15,7 @@ include '../../inc/conn.php';
                 <td class="p-3">Asal</td>
                 <td class="p-3">Pekerjaan</td>
                 <td class="p-3">Keperluan</td>
+                <td class="p-3">Waktu Kirim</td>
                 <td class="p-3">Aksi</td>
             </tr>
         </thead>
@@ -32,6 +33,7 @@ include '../../inc/conn.php';
                     <td class="p-2"><?= htmlspecialchars($data['asal']) ?></td>
                     <td class="p-2"><?= htmlspecialchars($data['pekerjaan']) ?></td>
                     <td class="p-2"><?= htmlspecialchars($data['keperluan']) ?></td>
+                    <td class="p-2"><?= htmlspecialchars($data['waktu_buku_tamu']) ?></td>
                     <td class="p-2">
                         <a class="text-sm inline-flex gap-1 items-center my-0.5 bg-yellow-400 hover:bg-yellow-500 hover:text-gray-50 duration-300 rounded-md py-1.5 px-2 shadow hover:shadow-md" href="?url=edit-buku-tamu&id_tamu=<?= $data['id_tamu'] ?>">Edit
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">

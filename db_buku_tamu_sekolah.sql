@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2024 at 01:59 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.13
+-- Generation Time: Jun 11, 2024 at 05:12 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `admin` (
   `username` varchar(32) NOT NULL,
   `password` varchar(32) NOT NULL,
   `level` enum('admin','petugas') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin`
@@ -40,8 +40,7 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `level`) VALUES
 (1, 'admin', 'admin', 'admin'),
-(2, 'LobakSoup', 'LobakSoup', 'petugas'),
-(4, 'sdsds', 'sdsads', 'petugas');
+(2, 'fahmi', 'fahmi', 'petugas');
 
 -- --------------------------------------------------------
 
@@ -55,23 +54,25 @@ CREATE TABLE `tamu` (
   `email` varchar(32) NOT NULL,
   `asal` varchar(32) NOT NULL,
   `pekerjaan` varchar(32) NOT NULL,
-  `keperluan` varchar(48) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `keperluan` varchar(48) NOT NULL,
+  `waktu_buku_tamu` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tamu`
 --
 
-INSERT INTO `tamu` (`id_tamu`, `nama`, `email`, `asal`, `pekerjaan`, `keperluan`) VALUES
-(1, 'Yasa Muta', 'yasamuta@gmail.com', 'Magelang', 'Petani', 'ada aja'),
-(2, 'asdsa', 'sadsa', 'sadsad', 'sadsad', 'jejeheheheh'),
-(4, 'Alwi Ridho Anshory', 'alwi22@gmail.com', 'Gg. Ulin', 'Pelajar', 'Ambil Pulpen'),
-(9, 'asdsadsa', 'sadsad', 'ssadsadaa', 'asdasdsa', 'sadasd'),
-(10, 'sadsadsa', 'sadsadsa', 'sadsad', 'sadasdsa', 'sads'),
-(11, 'asdsadsa', 'asdsad', 'sasadsa', 'dsasadsad', 'asdsad'),
-(12, 'sdfdsfs', 'sdfsdfds', 'sdfsdf', 'sdfsdfds', 'dsfsd'),
-(14, 'asdsad', 'asdsadsa', 'sadsad', 'asdsadsa', 'sadas'),
-(19, 'ehyehahe', 'hejshjeah', 'hejhejhae', 'jehjaheja', 'ehjasehjaea271');
+INSERT INTO `tamu` (`id_tamu`, `nama`, `email`, `asal`, `pekerjaan`, `keperluan`, `waktu_buku_tamu`) VALUES
+(62, 'Andi Santoso', 'andi.santoso@example.com', 'Jakarta', 'Guru', 'Mengikuti workshop pendidikan', '2024-06-11 15:11:33'),
+(63, 'Budi Hartono', 'budi.hartono@example.com', 'Bandung', 'Wirausaha', 'Membahas kerja sama sekolah', '2024-06-11 15:10:37'),
+(64, 'Chandra Wijaya', 'chandra.wijaya@example.com', 'Surabaya', 'Orang Tua Murid', 'Konsultasi pendidikan anak', '2024-06-11 15:10:37'),
+(65, 'Dewi Lestari', 'dewi.lestari@example.com', 'Yogyakarta', 'Penulis', 'Memberikan seminar literasi', '2024-06-11 15:10:37'),
+(66, 'Eka Prasetya', 'eka.prasetya@example.com', 'Semarang', 'Dosen', 'Penelitian pendidikan', '2024-06-11 15:10:37'),
+(67, 'Fitri Rahmawati', 'fitri.rahmawati@example.com', 'Medan', 'Pegawai Negeri', 'Mengurus administrasi pendidikan', '2024-06-11 15:10:37'),
+(68, 'Gita Anggraini', 'gita.anggraini@example.com', 'Makassar', 'Psikolog', 'Memberikan konseling kepada siswa', '2024-06-11 15:10:37'),
+(69, 'Hariyanto', 'hariyanto@example.com', 'Bali', 'Fotografer', 'Dokumentasi acara sekolah', '2024-06-11 15:10:37'),
+(70, 'Indah Sari', 'indah.sari@example.com', 'Palembang', 'Pustakawan', 'Pengadaan buku perpustakaan', '2024-06-11 15:10:37'),
+(71, 'Joko Susilo', 'joko.susilo@example.com', 'Malang', 'Pengusaha', 'Memberikan motivasi kewirausahaan', '2024-06-11 15:11:04');
 
 --
 -- Indexes for dumped tables
@@ -97,13 +98,13 @@ ALTER TABLE `tamu`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tamu`
 --
 ALTER TABLE `tamu`
-  MODIFY `id_tamu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_tamu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

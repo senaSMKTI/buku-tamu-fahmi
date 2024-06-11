@@ -2,9 +2,7 @@
 include '../../inc/conn.php';
 ?>
 <h2 class="font-bold text-xl my-2">Buku Tamu Sekolah</h2>
-<a class="inline-block bg-green-400 hover:bg-green-500 hover:text-gray-50 duration-300 rounded-md py-1.5 px-2 shadow hover:shadow-md" href="?url=tambah-buku-tamu">Tambah +</a>
-<br />
-<br />
+<a class="inline-block bg-green-400 hover:bg-green-500 hover:text-gray-50 duration-300 rounded-md py-1.5 px-2 shadow hover:shadow-md mb-6" href="?url=tambah-buku-tamu">Tambah +</a>
 <div class="relative overflow-x-auto">
     <table class="border border-gray-100 w-full" border="1">
         <thead>

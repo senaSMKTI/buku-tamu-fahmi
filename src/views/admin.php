@@ -44,7 +44,7 @@ if (empty($_SESSION['id_admin'])) {
 
         <hr class="mt-6">
         <?php if (empty($_GET['url'])) : ?>
-            <h1 class="mt-4 font-bold text-xl">Selamat Datang di Aplikasi Buku Tamu Sekolah</h1>
+            <h1 class="mt-4 mb-2 font-bold text-xl">Selamat Datang di Aplikasi Buku Tamu Sekolah</h1>
             <p>Aplikasi ini berguna untuk mencatat tamu yang datang beserta keperluannya.</p>
             <br />
             <p>Jumlah petugas saat ini: <?= mysqli_num_rows($resultAdmin) ?> </p>

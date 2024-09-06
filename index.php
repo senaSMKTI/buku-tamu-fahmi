@@ -10,7 +10,7 @@ if (isset($_SESSION['id_admin'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplikasi Buku Tamu Sekolah</title>
+    <title>Expo MTQ</title>
     <link rel="stylesheet" href="./public/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script> <!-- Jaga-jaga jika tailwind tidak ter-update -->
 </head>
@@ -24,7 +24,7 @@ if (isset($_SESSION['id_admin'])) {
                         <path fill-rule="evenodd" d="M12.5 9.75A2.75 2.75 0 0 0 9.75 7H4.56l2.22 2.22a.75.75 0 1 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.5a.75.75 0 0 1 1.06 1.06L4.56 5.5h5.19a4.25 4.25 0 0 1 0 8.5h-1a.75.75 0 0 1 0-1.5h1a2.75 2.75 0 0 0 2.75-2.75Z" clip-rule="evenodd" />
                     </svg>
                     Kembali</a>
-                <h3 class="font-bold text-2xl mb-4 mt-6">Tambah Buku Tamu Sekolah</h3>
+                <h3 class="font-bold text-2xl mb-4 mt-6">Buku Tamu Digital</h3>
                 <form class="text-center" action="./src/processes/bukuTamuCrud.php?action=add" method="post">
                     <table class="flex justify-center text-start">
                         <tr>
@@ -48,9 +48,7 @@ if (isset($_SESSION['id_admin'])) {
                             <td><input class="m-1 ml-3 p-1 px-2 border rounded-md shadow" type="text" name="keperluan" id="keperluan" required></td>
                         </tr>
                     </table>
-                    <button type="submit" class="mt-6 py-1.5 px-3 rounded-md text-white bg-sky-500 shadow-md hover:bg-sky-600 hover:shadow-lg duration-300" onclick="
-                            return confirm('Apakah Anda yakin ingin menambahkan data ini?');
-                            ">Tambah</button>
+                    <button type="submit" class="mt-6 py-1.5 px-3 rounded-md text-white bg-sky-500 shadow-md hover:bg-sky-600 hover:shadow-lg duration-300">Tambah</button>
                 </form>
             </div>
         <?php else : ?>

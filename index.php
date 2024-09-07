@@ -32,20 +32,12 @@ if (isset($_SESSION['id_admin'])) {
                             <td><input class="m-1 ml-3 p-1 px-2 border rounded-md shadow" type="text" name="nama" id="nama" required></td>
                         </tr>
                         <tr>
-                            <td><label for="email">Email:</label></td>
-                            <td><input class="m-1 ml-3 p-1 px-2 border rounded-md shadow" type="text" name="email" id="email" required></td>
+                            <td><label for="instansi">Instansi:</label></td>
+                            <td><input class="m-1 ml-3 p-1 px-2 border rounded-md shadow" type="text" name="instansi" id="instansi" required></td>
                         </tr>
                         <tr>
                             <td><label for="asal">Asal:</label></td>
                             <td><input class="m-1 ml-3 p-1 px-2 border rounded-md shadow" type="text" name="asal" id="asal" required></td>
-                        </tr>
-                        <tr>
-                            <td><label for="pekerjaan">Pekerjaan:</label></td>
-                            <td><input class="m-1 ml-3 p-1 px-2 border rounded-md shadow" type="text" name="pekerjaan" id="pekerjaan" required></td>
-                        </tr>
-                        <tr>
-                            <td><label for="keperluan">Keperluan:</label></td>
-                            <td><input class="m-1 ml-3 p-1 px-2 border rounded-md shadow" type="text" name="keperluan" id="keperluan" required></td>
                         </tr>
                     </table>
                     <button type="submit" class="mt-6 py-1.5 px-3 rounded-md text-white bg-sky-500 shadow-md hover:bg-sky-600 hover:shadow-lg duration-300">Tambah</button>
@@ -53,11 +45,11 @@ if (isset($_SESSION['id_admin'])) {
             </div>
         <?php else : ?>
             <form class="bg-gray-100 p-12 border border-gray-200 rounded-lg w-min text-center" action="./src/processes/loginProcess.php" method="post">
-                <h1 class="font-bold text-3xl mb-6 sm:mb-8 sm:whitespace-nowrap">Aplikasi Buku Tamu Sekolah</h1>
-                <label class="text-lg" for="username">Username: </label>
+                <h1 class="font-bold text-3xl mb-6 sm:mb-8 sm:whitespace-nowrap">Buku Tamu Digital</h1>
+                <!-- <label class="text-lg" for="username">Username: </label>
                 <input class="border px-2 py-1 rounded-md mb-4 shadow-sm" type="text" name="username" id="username" required> <br />
                 <label class="text-lg" for="password">Password: </label>
-                <input class="border px-2 py-1 rounded-md mb-4 shadow-sm" type="password" name="password" id="password" required> <br />
+                <input class="border px-2 py-1 rounded-md mb-4 shadow-sm" type="password" name="password" id="password" required> <br /> -->
                 <?php
                 if (isset($_SESSION['login_status'])) {
                     if (!$_SESSION['login_status']) {
@@ -68,8 +60,11 @@ if (isset($_SESSION['id_admin'])) {
                     };
                 };
                 ?>
-                <button class="bg-sky-500 shadow-md hover:shadow-lg hover:bg-sky-600 px-4 py-1 mt-2 mb-4 rounded-md duration-300 text-white" type="submit">Login</button> <br />
-                <a href="index.php?url=tambah-buku-tamu" class="text-sm text-blue-600 hover:text-blue-800 duration-300">Masuk sebagai tamu</a>
+                <br><br>
+                <!-- <button class="bg-sky-500 shadow-md hover:shadow-lg hover:bg-sky-600 px-4 py-1 mt-2 mb-4 rounded-md duration-300 text-white" type="submit">Login</button> <br />
+                <a href="index.php?url=tambah-buku-tamu" class="text-sm text-blue-600 hover:text-blue-800 duration-300">Masuk sebagai tamu</a> -->
+                <a href="index.php?url=tambah-buku-tamu" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Buku Tamu</a>
+                <br><br>
             </form>
             <?php
             if (isset($_SESSION['add_buku_tamu_status'])) {

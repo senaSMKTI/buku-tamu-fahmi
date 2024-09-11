@@ -11,8 +11,11 @@ if (isset($_SESSION['id_admin'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expo MTQ</title>
+    <!-- <link rel="stylesheet" href="//192.168.56.1/public/css/style.css?ver=1"> -->
     <link rel="stylesheet" href="./public/css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script> <!-- Jaga-jaga jika tailwind tidak ter-update -->
+    <script src="./public/js/index.js"></script> 
+    
+    <!-- Jaga-jaga jika tailwind tidak ter-update -->
 </head>
 
 <body class="bg-[url('./public/img/bg.jpg')] bg-no-repeat bg-cover text-gray-900">

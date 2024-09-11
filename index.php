@@ -32,8 +32,8 @@ if (isset($_SESSION['id_admin'])) {
                             <td><input class="m-1 ml-3 p-1 px-2 border rounded-md shadow" type="text" name="nama" id="nama" required></td>
                         </tr>
                         <tr>
-                            <td><label for="instansi">Instansi:</label></td>
-                            <td><input class="m-1 ml-3 p-1 px-2 border rounded-md shadow" type="text" name="instansi" id="instansi" required></td>
+                            <td><label for="keperluan">Instansi:</label></td>
+                            <td><input class="m-1 ml-3 p-1 px-2 border rounded-md shadow" type="text" name="keperluan" id="keperluan" required></td>
                         </tr>
                         <tr>
                             <td><label for="asal">Asal:</label></td>

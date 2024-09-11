@@ -2,7 +2,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$db = 'db_buku_tamu_sekolah';
+$db = 'bukutamu';
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
